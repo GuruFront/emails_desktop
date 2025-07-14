@@ -1,6 +1,8 @@
+import { Subscription, combineLatest } from 'rxjs';
 import { EmailStore } from '../stores/EmailStore';
 import { FolderStore } from '../stores/FolderStore';
-import { Subscription, combineLatest } from 'rxjs';
+import { Email } from '../types/email.types';
+import { Folder } from '../types/folder.types';
 
 export function syncEmailCountWithFolders(
   emailStore: Readonly<EmailStore>,
@@ -12,7 +14,7 @@ export function syncEmailCountWithFolders(
   ]).subscribe(([
     emails,
     folders
-  ]: [readonly import('../types/email.types').Email[], readonly import('../types/folder.types').Folder[]]) => {
+  ]: [Email[], Folder[]]) => {
     const updatedFolders = folders.map(folder => {
       let count;
       if (folder.id === 'trash') {
