@@ -1,0 +1,114 @@
+{
+  "emails": [
+    {
+      "id": "1",
+      "date": "2024-07-12T10:30:00Z",
+      "from": "team@sparkmail.com",
+      "subject": "Добро пожаловать в Spark Desktop!",
+      "content": "Спасибо, что выбрали Spark Desktop. Начните работу с вашим почтовым ящиком прямо сейчас!",
+      "isRead": false,
+      "isDeleted": false,
+      "folderId": "inbox"
+    },
+    {
+      "id": "2",
+      "date": "2024-07-11T09:00:00Z",
+      "from": "support@sparkmail.com",
+      "subject": "Ваша поддержка важна для нас",
+      "content": "Если у вас возникли вопросы, просто ответьте на это письмо. Мы всегда готовы помочь!",
+      "isRead": true,
+      "isDeleted": false,
+      "folderId": "inbox"
+    },
+    {
+      "id": "3",
+      "date": "2024-07-10T15:45:00Z",
+      "from": "me@mydomain.com",
+      "subject": "Черновик письма",
+      "content": "Это пример черновика. Вы можете продолжить редактирование и отправить его позже.",
+      "isRead": false,
+      "isDeleted": false,
+      "folderId": "drafts"
+    },
+    {
+      "id": "4",
+      "date": "2024-07-09T18:20:00Z",
+      "from": "friend@example.com",
+      "subject": "Встреча на выходных",
+      "content": "Привет! Давай встретимся в эту субботу в 15:00 в нашем любимом кафе?",
+      "isRead": false,
+      "isDeleted": false,
+      "folderId": "inbox"
+    },
+    {
+      "id": "5",
+      "date": "2024-07-08T12:00:00Z",
+      "from": "noreply@bank.com",
+      "subject": "Выписка по счету за июнь",
+      "content": "Уважаемый клиент! Ваша выписка по счету за июнь доступна в личном кабинете.",
+      "isRead": true,
+      "isDeleted": false,
+      "folderId": "inbox"
+    },
+    {
+      "id": "6",
+      "date": "2024-07-07T08:30:00Z",
+      "from": "me@mydomain.com",
+      "subject": "Отправленное письмо",
+      "content": "Это пример отправленного письма.",
+      "isRead": true,
+      "isDeleted": false,
+      "folderId": "sent"
+    },
+    {
+      "id": "7",
+      "date": "2024-07-06T21:10:00Z",
+      "from": "newsletter@shop.com",
+      "subject": "Скидки недели!",
+      "content": "Только на этой неделе — скидки до 50% на популярные товары!",
+      "isRead": false,
+      "isDeleted": false,
+      "folderId": "inbox"
+    },
+    {
+      "id": "8",
+      "date": "2024-07-05T14:00:00Z",
+      "from": "me@mydomain.com",
+      "subject": "Удалённое письмо",
+      "content": "Это письмо было удалено.",
+      "isRead": true,
+      "isDeleted": true,
+      "folderId": "trash"
+    }
+  ],
+  "folders": [
+    {
+      "id": "inbox",
+      "name": "Входящие",
+      "type": "inbox",
+      "emailCount": 5,
+      "isActive": true
+    },
+    {
+      "id": "sent",
+      "name": "Отправленные",
+      "type": "sent",
+      "emailCount": 1,
+      "isActive": false
+    },
+    {
+      "id": "drafts",
+      "name": "Черновики",
+      "type": "drafts",
+      "emailCount": 1,
+      "isActive": false
+    },
+    {
+      "id": "trash",
+      "name": "Корзина",
+      "type": "trash",
+      "emailCount": 1,
+      "isActive": false
+    }
+  ]
+} 
