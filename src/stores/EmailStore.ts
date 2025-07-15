@@ -1,4 +1,4 @@
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map, distinctUntilChanged } from 'rxjs';
 import { Email, EmailState } from '../types/email.types';
 
@@ -27,7 +27,7 @@ export class EmailStore {
   readonly emails$ = this.state$.pipe(
     map(state => state.emails),
     distinctUntilChanged(shallowEmailsEqual)
-  ) as import('rxjs').Observable<readonly Email[]>;
+  ) as Observable<readonly Email[]>;
 
   readonly selectedEmail$ = this.state$.pipe(
     map(state => {
@@ -39,17 +39,17 @@ export class EmailStore {
       a?.isRead === b?.isRead &&
       a?.isDeleted === b?.isDeleted
     )
-  ) as import('rxjs').Observable<Email | null>;
+  ) as Observable<Email | null>;
 
   readonly loading$ = this.state$.pipe(
     map(state => state.loading),
     distinctUntilChanged()
-  ) as import('rxjs').Observable<boolean>;
+  ) as Observable<boolean>;
 
   readonly error$ = this.state$.pipe(
     map(state => state.error),
     distinctUntilChanged()
-  ) as import('rxjs').Observable<string | null>;
+  ) as Observable<string | null>;
 
   setEmails(emails: readonly Email[]): void {
     this.updateState({ emails });

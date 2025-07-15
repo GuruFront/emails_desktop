@@ -1,4 +1,4 @@
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map, distinctUntilChanged } from 'rxjs';
 import { Folder, FolderState } from '../types/folder.types';
 
@@ -13,23 +13,23 @@ export class FolderStore {
   readonly folders$ = this.state$.pipe(
     map(state => state.folders),
     distinctUntilChanged()
-  ) as import('rxjs').Observable<readonly Folder[]>;
+  ) as Observable<readonly Folder[]>;
 
   readonly selectedFolder$ = this.state$.pipe(
     map(state => state.selectedFolderId),
     distinctUntilChanged(),
     map(id => this.state$.value.folders.find(f => f.id === id) ?? null)
-  ) as import('rxjs').Observable<Folder | null>;
+  ) as Observable<Folder | null>;
 
   readonly loading$ = this.state$.pipe(
     map(state => state.loading),
     distinctUntilChanged()
-  ) as import('rxjs').Observable<boolean>;
+  ) as Observable<boolean>;
 
   readonly error$ = this.state$.pipe(
     map(state => state.error),
     distinctUntilChanged()
-  ) as import('rxjs').Observable<string | null>;
+  ) as Observable<string | null>;
 
   setFolders(folders: readonly Folder[]): void {
     this.updateState({ folders });

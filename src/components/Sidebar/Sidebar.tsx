@@ -5,7 +5,7 @@ import { Folder } from '../../types/folder.types';
 import { SidebarProps } from '../../types/sidebar.types';
 
 export function Sidebar({ controller, emailController }: SidebarProps): JSX.Element {
-  const folders = useObservable(controller.folders$) as import('../../types/folder.types').Folder[] || [];
+  const folders = useObservable(controller.folders$) as Folder[] || [];
   const selectedFolder = useObservable(controller.selectedFolder$);
   const loading = useObservable(controller.loading$);
 
