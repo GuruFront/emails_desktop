@@ -8,7 +8,7 @@ const DATA_URL = '../data/emails.json';
 export class ApiService {
   getEmails(): Observable<readonly Email[]> {
     return from(fetch(DATA_URL)).pipe(
-      switchMap(res => res.json() as Promise<EmailsJsonData>),
+      switchMap((res): Promise<EmailsJsonData> => res.json()),
       map((data) => data.emails),
       map(emails => [...emails].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())),
       delay(1000)
@@ -17,7 +17,7 @@ export class ApiService {
 
   getFolders(): Observable<readonly Folder[]> {
     return from(fetch(DATA_URL)).pipe(
-      switchMap(res => res.json() as Promise<EmailsJsonData>),
+      switchMap((res): Promise<EmailsJsonData> => res.json()),
       map((data) => data.folders),
       delay(1000)
     );

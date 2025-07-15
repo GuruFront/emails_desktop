@@ -10,26 +10,26 @@ export class FolderStore {
     error: null
   });
 
-  readonly folders$ = this.state$.pipe(
+  readonly folders$: Observable<readonly Folder[]> = this.state$.pipe(
     map(state => state.folders),
     distinctUntilChanged()
-  ) as Observable<readonly Folder[]>;
+  );
 
-  readonly selectedFolder$ = this.state$.pipe(
+  readonly selectedFolder$: Observable<Folder | null> = this.state$.pipe(
     map(state => state.selectedFolderId),
     distinctUntilChanged(),
     map(id => this.state$.value.folders.find(f => f.id === id) ?? null)
-  ) as Observable<Folder | null>;
+  );
 
-  readonly loading$ = this.state$.pipe(
+  readonly loading$: Observable<boolean> = this.state$.pipe(
     map(state => state.loading),
     distinctUntilChanged()
-  ) as Observable<boolean>;
+  );
 
-  readonly error$ = this.state$.pipe(
+  readonly error$: Observable<string | null> = this.state$.pipe(
     map(state => state.error),
     distinctUntilChanged()
-  ) as Observable<string | null>;
+  );
 
   setFolders(folders: readonly Folder[]): void {
     this.updateState({ folders });

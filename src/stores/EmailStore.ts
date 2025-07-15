@@ -24,12 +24,12 @@ export class EmailStore {
     error: null
   });
 
-  readonly emails$ = this.state$.pipe(
+  readonly emails$: Observable<readonly Email[]> = this.state$.pipe(
     map(state => state.emails),
     distinctUntilChanged(shallowEmailsEqual)
-  ) as Observable<readonly Email[]>;
+  );
 
-  readonly selectedEmail$ = this.state$.pipe(
+  readonly selectedEmail$: Observable<Email | null> = this.state$.pipe(
     map(state => {
       const emailId = state.selectedEmailId;
       return emailId ? state.emails.find(e => e.id === emailId) ?? null : null;
@@ -39,17 +39,17 @@ export class EmailStore {
       a?.isRead === b?.isRead &&
       a?.isDeleted === b?.isDeleted
     )
-  ) as Observable<Email | null>;
+  );
 
-  readonly loading$ = this.state$.pipe(
+  readonly loading$: Observable<boolean> = this.state$.pipe(
     map(state => state.loading),
     distinctUntilChanged()
-  ) as Observable<boolean>;
+  );
 
-  readonly error$ = this.state$.pipe(
+  readonly error$: Observable<string | null> = this.state$.pipe(
     map(state => state.error),
     distinctUntilChanged()
-  ) as Observable<string | null>;
+  );
 
   setEmails(emails: readonly Email[]): void {
     this.updateState({ emails });

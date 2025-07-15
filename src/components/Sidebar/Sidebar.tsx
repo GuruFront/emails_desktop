@@ -5,7 +5,7 @@ import { Folder } from '../../types/folder.types';
 import { SidebarProps } from '../../types/sidebar.types';
 
 export function Sidebar({ controller, emailController }: SidebarProps): JSX.Element {
-  const folders = useObservable(controller.folders$) as Folder[] || [];
+  const folders = useObservable<readonly Folder[]>(controller.folders$) || [];
   const selectedFolder = useObservable(controller.selectedFolder$);
   const loading = useObservable(controller.loading$);
 
@@ -24,7 +24,7 @@ export function Sidebar({ controller, emailController }: SidebarProps): JSX.Elem
     emailController.loadEmails();
   };
 
-  const allFolders: Folder[] = [
+  const allFolders: readonly Folder[] = [
     {
       id: '',
       name: 'Все письма',
