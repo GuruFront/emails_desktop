@@ -1,7 +1,7 @@
 import { EmailStore } from '../stores/EmailStore';
 import { ApiService } from '../services/ApiService';
-import { Email } from '../types/email.types';
-import { EmailFilters } from '../types/rxjs.types';
+import type { Email } from '../types/email.types';
+import type { EmailFilters } from '../types/rxjs.types';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { map, tap, catchError, finalize } from 'rxjs';
 

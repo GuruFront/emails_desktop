@@ -8,6 +8,6 @@ export type EmailItemProps = DeepReadonly<{
   onClick: (id: string) => void;
 }>;
 
-export type EmailListProps = {
-  readonly controller: EmailController;
-}; 
+export type EmailListProps = DeepReadonly<{
+  controller: EmailController;
+}>; 

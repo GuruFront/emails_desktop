@@ -1,6 +1,6 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, distinctUntilChanged } from 'rxjs';
-import { Folder, FolderState } from '../types/folder.types';
+import type { Folder, FolderState } from '../types/folder.types';
 
 export class FolderStore {
   private readonly state$ = new BehaviorSubject<FolderState>({

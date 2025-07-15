@@ -1,6 +1,6 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, distinctUntilChanged } from 'rxjs';
-import { Email, EmailState } from '../types/email.types';
+import type { Email, EmailState } from '../types/email.types';
 
 function shallowEmailsEqual(a: readonly Email[], b: readonly Email[]): boolean {
   if (a.length !== b.length) return false;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FolderItem } from './FolderItem';
-import { FolderListProps } from '../../types/sidebar.types';
+import type { FolderListProps } from '../../types/sidebar.types';
 
 export function FolderList({ folders, selectedFolderId, onSelect }: FolderListProps): JSX.Element {
   return (

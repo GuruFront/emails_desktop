@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useObservable } from '../../utils/useObservable';
 import { FolderList } from './FolderList';
-import { Folder } from '../../types/folder.types';
-import { SidebarProps } from '../../types/sidebar.types';
+import type { Folder } from '../../types/folder.types';
+import type { SidebarProps } from '../../types/sidebar.types';
 
 export function Sidebar({ controller, emailController }: SidebarProps): JSX.Element {
   const folders = useObservable<readonly Folder[]>(controller.folders$) || [];

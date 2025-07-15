@@ -2,7 +2,7 @@ import React from 'react';
 import { useObservable } from '../../utils/useObservable';
 import { EmailItem } from './EmailItem';
 import { LoadingSpinner } from '../common/LoadingSpinner';
-import { EmailListProps } from '../../types/email-list.types';
+import type { EmailListProps } from '../../types/email-list.types';
 
 export function EmailList({ controller }: EmailListProps): JSX.Element {
   const emails = useObservable(controller.emails$) || [];

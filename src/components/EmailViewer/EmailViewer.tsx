@@ -1,5 +1,5 @@
 import React from 'react';
-import { EmailViewerProps } from '../../types/email-viewer.types';
+import type { EmailViewerProps } from '../../types/email-viewer.types';
 import { useObservable } from '../../utils/useObservable';
 
 export function EmailViewer({ controller, onDeleteEmail }: EmailViewerProps): JSX.Element {

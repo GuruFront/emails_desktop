@@ -1,5 +1,5 @@
 import React from 'react';
-import { EmailItemProps } from '../../types/email-list.types';
+import type { EmailItemProps } from '../../types/email-list.types';
 
 export function EmailItem({ email, isSelected, onClick }: EmailItemProps): JSX.Element {
   return (

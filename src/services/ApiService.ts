@@ -1,5 +1,5 @@
-import { Email, EmailsJsonData } from '../types/email.types';
-import { Folder } from '../types/folder.types';
+import type { Email, EmailsJsonData } from '../types/email.types';
+import type { Folder } from '../types/folder.types';
 import { Observable, from } from 'rxjs';
 import { delay, map, switchMap } from 'rxjs';
 
