@@ -9,7 +9,7 @@ export class ApiService {
   getEmails(): Observable<readonly Email[]> {
     return from(fetch(DATA_URL)).pipe(
       switchMap((res): Promise<EmailsJsonData> => res.json()),
-      map((data) => data.emails),
+      map((data) => data.emails.map(e => ({ ...e, attachments: e.attachments ? [...e.attachments] : undefined }))),
       map(emails => [...emails].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())),
       delay(1000)
     );

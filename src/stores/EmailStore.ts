@@ -25,14 +25,15 @@ export class EmailStore {
   });
 
   readonly emails$: Observable<readonly Email[]> = this.state$.pipe(
-    map(state => state.emails),
+    map(state => state.emails.map(e => ({ ...e, attachments: e.attachments ? [...e.attachments] : undefined }))),
     distinctUntilChanged(shallowEmailsEqual)
   );
 
   readonly selectedEmail$: Observable<Email | null> = this.state$.pipe(
     map(state => {
       const emailId = state.selectedEmailId;
-      return emailId ? state.emails.find(e => e.id === emailId) ?? null : null;
+      const found = emailId ? state.emails.find(e => e.id === emailId) ?? null : null;
+      return found ? { ...found, attachments: found.attachments ? [...found.attachments] : undefined } : null;
     }),
     distinctUntilChanged((a, b) =>
       a?.id === b?.id &&
